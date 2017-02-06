@@ -1,0 +1,443 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <div class="ui equal width grid" style="margin: 5px 5px 5px 5px;width:70%">
+        <div class="row">
+            <div class="column">
+                <div class="ui container segment">
+                        <div class="ui floating dropdown labeled search icon button" id="drop_down">
+                            <i class="dropdown icon"></i>
+                            <span class="text">选择地区</span>
+                            <div class="menu">
+                                <div class="item" id="mtg">门头沟</div>
+                                <div class="item" id="bjzb">北京周边</div>
+                                <div class="item" id="xc">西城</div>
+                                <div class="item" id="dc">东城</div>
+                                <div class="item" id="cy">朝阳</div>
+                                <div class="item" id="cw">崇文</div>
+                                <div class="item" id="sjs">石景山</div>
+                                <div class="item" id="sy">顺义</div>
+                                <div class="item" id="xw">宣武</div>
+                                <div class="item" id="tz">通州</div>
+                                <div class="item" id="dx">大兴</div>
+                                <div class="item" id="yj">燕郊</div>
+                                <div class="item" id="my">密云</div>
+                                <div class="item" id="pg">平谷</div>
+                                <div class="item" id="hr">怀柔</div>
+                                <div class="item" id="yq">延庆</div>
+                                <div class="item" id="cp">昌平</div>
+                                <div class="item" id="ft">丰台</div>
+                                <div class="item" id="fs">房山</div>
+                                <div class="item" id="hd">海淀</div>
+                                <div class="item" id="bm">不明</div>
+                            </div>
+                        </div>
+
+                    <div class="ui container" id="chart1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui container segment">
+                    <div class="ui container" id="chart2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui container segment">
+                    <div class="ui container" id="chart3"></div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui container segment">
+                    <div class="ui container" id="chart4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $('#drop_down')
+            .dropdown()
+    ;
+    </script>
+{% endblock %}
+
+{% block chartjs %}
+    <script>
+    $('#hd').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '海淀top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_hd|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#mtg').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '门头沟top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_mtg|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#bjzb').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '北京周边top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_bjzb|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#xc').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '西城top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_xc|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#cy').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '朝阳top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_cy|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#cw').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '崇文top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_cw|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#sjs').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '石景山top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_sjs|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#dc').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '东城top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_dc|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#sy').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '顺义top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_sy|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#xw').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '宣武top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_xw|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#tz').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '通州top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_tz|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#dx').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '大兴top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_dx|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#yj').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '燕郊top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_yj|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#my').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '密云top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_my|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#pg').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '平谷top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_pg|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#hr').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '怀柔top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_hr|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#yq').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '延庆top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_yq|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#cp').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '昌平top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_cp|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#ft').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '丰台top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_ft|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#fs').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '房山top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_fs|safe }}
+        });
+    });
+    </script>
+    <script>
+    $('#bm').click(function (){
+        $('#chart1').highcharts({
+        title: {
+            text: '不明top3类别'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_bm|safe }}
+        });
+    });
+    </script>
+    <script>
+    $(function () {
+        $('#chart2').highcharts({
+            title: {
+            text: '各类别发帖量'
+        },
+
+        yAxis: {
+            title: {
+                text: '数量'
+            }
+        },
+        series: {{ chart_num|safe }}
+        })
+    })
+    </script>
+    <script>
+    $(function () {
+        $('#chart3').highcharts({
+            title: {
+            text: '一天内各类别发帖量占比'
+        },
+
+        series: {{ chart_percent1|safe }}
+        })
+    })
+    </script>
+    <script>
+    $(function () {
+        $('#chart4').highcharts({
+            title: {
+            text: '一天内各地区发帖量占比'
+        },
+
+        series: {{ chart_percent2|safe }}
+        })
+    })
+    </script>
+{% endblock %}

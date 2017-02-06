@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="ui equal width grid" style="margin: 5px 5px 5px 5px;width:70%">
+            <div class="row">
+                <div class="column">
+                    <div class="ui blue segment">
+                        <div class="value">
+                            {{ count }}
+                        </div>
+                        <div class="label">
+                            document
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui blue segment">
+                        <div class="value">
+                            2000
+                        </div>
+                        <div class="label">
+                            views
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="ui segment">
+                        <div class="ui divided items">
+                            {% for item in Info %}
+                            <div class="item">
+                                <div class="content">
+                                    <div class="header">
+                                        {{ item.title }}
+                                    </div>
+                                    <div class="description">
+                                        <p>post on:{{ item.pub_date }}</p>
+                                        <p>area:{{ item.area }}</p>
+                                        <p>price:{{ item.price }}</p>
+                                    </div>
+                                    <div class="extra">
+                                        <div class="ui label">
+                                            {{ item.cates }}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                         {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui pagination menu">
+                {% if Info.has_previous %}
+                    <a class="item" href="?page={{ Info.previous_page_number }}">< Rre</a>
+                {% endif %}
+                <span class="item">{{ Info.number }} of {{ Info.paginator.num_pages }}</span>
+                {% if Info.has_next %}
+                    <a class="item" href="?page={{ Info.next_page_number }}">Next ></a>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}
+

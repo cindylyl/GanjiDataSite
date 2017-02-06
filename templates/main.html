@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/semantic.js' %}"></script>
+    <script src="{% static 'js/highcharts.js' %}"></script>
+    <script src="{% static 'js/highcharts-more.js' %}"></script>
+    <script src="{% static 'js/exporting.js' %}"></script>
+
+</head>
+<body>
+    <div class="ui thin visible left sidebar inverted vertical menu">
+        <div class="header item">
+            <img src="{% static 'images/logo2.png' %}">
+        </div>
+        <a class="item" href="http://127.0.0.1:8000/doc/">
+            Document<i class="browser icon"></i>
+        </a>
+        <a class="item" href="http://127.0.0.1:8000/chart/">
+            Charts<i class="bar chart icon"></i>
+        </a>
+        <div class="item">
+            Others<i class="idea icon"></i>
+        </div>
+
+    </div>
+    <div class="pusher">
+        <div class="ui menu">
+        <div class="header item" id="menu">Menu<i class="content icon"></i> </div>
+            <a class="item">About us</a>
+            <a class="item">Location</a>
+            <a class="item">Others</a>
+        </div>
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+    <script>
+        $('.header.item').click(function () {
+            $('.ui.sidebar').sidebar('toggle');
+        });
+    </script>
+    {% block chartjs %}
+
+    {% endblock %}
+</body>
+</html>
